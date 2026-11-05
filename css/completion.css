@@ -1,0 +1,19 @@
+#loginPage { overflow-y:auto; }
+#loginPage > div { margin:auto; }
+#operatorsGrid { max-height:48vh; overflow-y:auto; padding:2px; }
+#operatorsGrid button[hidden] { display:none !important; }
+#accessSettings label { display:block; line-height:1.45; }
+#accessSettings input,#accessSettings select,#designerLayoutSelect,#designerFloorName { min-height:44px; font-size:16px; box-sizing:border-box; }
+#accessSettings button { min-height:44px; }
+#accessCode:empty { display:none; }
+#designerFloorStatus { line-height:1.5; font-size:13px; overflow-wrap:anywhere; }
+@media(max-width:767px) {
+  #loginPage { padding:16px !important; justify-content:flex-start !important; }
+  #loginPage h2 { font-size:24px !important; margin:12px 0 20px !important; }
+  #adminLoginForm { padding:16px !important; }
+  #accessSettings .grid.two { display:grid; grid-template-columns:minmax(0,1fr); gap:24px; }
+  #accessSettings .grid.two > * { min-width:0; }
+  #designerInfoPanel { max-width:calc(100vw - 24px); }
+  #designerInfoPanel input,#designerInfoPanel select { font-size:16px !important; min-height:44px; min-width:0; }
+  #designerInfoPanel button { min-height:44px; font-size:14px !important; }
+}

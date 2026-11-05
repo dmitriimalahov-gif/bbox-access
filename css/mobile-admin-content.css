@@ -1,0 +1,306 @@
+/* Content presentation for authenticated administrators on phones only. */
+.bbox-mobile-route-toggle { display: none; }
+@media screen and (max-width: 768px) {
+  body.bbox-mobile-admin {
+    font-size: 16px;
+    line-height: 1.45;
+    -webkit-text-size-adjust: 100%;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal-content, .bbox-mobile-overlay > .card, dialog) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) :is(.row, .grid, .field, .card) {
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) .row {
+    flex-wrap: wrap !important;
+    gap: 10px;
+    white-space: normal !important;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) .field {
+    flex: 1 1 100% !important;
+    width: 100%;
+    gap: 6px;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) label {
+    font-size: 14px !important;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: normal !important;
+    color: var(--text);
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) :is(input, select, textarea) {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 48px !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    padding: 11px 12px !important;
+    border-radius: 10px;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) textarea {
+    min-height: 88px !important;
+    resize: vertical;
+    width: 100% !important;
+    white-space: pre-wrap;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) input:is([type="checkbox"], [type="radio"]) {
+    width: 24px !important;
+    min-width: 24px !important;
+    height: 24px;
+    min-height: 24px !important;
+    padding: 0 !important;
+    margin: 10px 8px 10px 0;
+    accent-color: #008f7d;
+    flex-shrink: 0;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) :is(button, .btn) {
+    min-height: 44px !important;
+    min-width: 44px;
+    max-width: 100%;
+    padding: 10px 12px !important;
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    touch-action: manipulation;
+    border-radius: 10px;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) :is(button, .btn):hover {
+    transform: none;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) :is(.hint, small, .bbox-mobile-small-text) {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-width-safe {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-form-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-flex-wrap {
+    flex-wrap: wrap !important;
+    min-width: 0;
+    max-width: 100%;
+  }
+  body.bbox-mobile-admin .bbox-mobile-form-item,
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) .row > :is(select, textarea, input:not([type="checkbox"]):not([type="radio"])) {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) .grid.two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) :is(h2, h3, h4) {
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  body.bbox-mobile-admin #stats canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  body.bbox-mobile-admin :is(.pane, .modal, .bbox-mobile-overlay, dialog) .table-wrapper {
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body.bbox-mobile-admin :is(.resize-handle, .column-resize-handle, .save-width-row, .save-width-btn) {
+    display: none !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead .drag-handle { display: none !important; }
+  body.bbox-mobile-admin .bbox-mobile-card-table {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > colgroup { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead {
+    display: block;
+    position: static;
+    margin-bottom: 10px;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead:not(:has(.bbox-mobile-sort-control)) { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead > tr:not(.save-width-row) {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead > tr > th {
+    display: none;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead > tr > th.bbox-mobile-sort-control {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    width: auto !important;
+    min-width: 44px !important;
+    max-width: 100% !important;
+    min-height: 44px;
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+    line-height: 1.3;
+    text-transform: none;
+    text-align: left !important;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    white-space: normal !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > thead > tr > th::after { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody {
+    display: grid;
+    gap: 14px;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14px;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px !important;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .035);
+    overflow: hidden;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: auto !important;
+    min-height: 48px;
+    height: auto !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid var(--border);
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow: visible;
+    text-overflow: clip;
+    background: transparent !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td::before {
+    content: attr(data-mobile-label);
+    display: block;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td[data-mobile-label=""]::before { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td.bbox-mobile-wide-cell {
+    grid-column: 1 / -1;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td.bbox-mobile-primary-cell {
+    font-size: 18px !important;
+    font-weight: 700;
+    color: var(--text) !important;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td.bbox-mobile-action-cell {
+    gap: 8px;
+    font-family: var(--sans);
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td.bbox-mobile-action-cell.row {
+    flex-direction: row;
+    align-items: center;
+  }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td.bbox-mobile-action-cell.row::before { flex: 0 0 100%; }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr > td.bbox-mobile-empty-cell { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-card-table > tbody > tr.bbox-mobile-route-row:not(.bbox-mobile-route-expanded) > td.bbox-mobile-route-detail { display: none !important; }
+  body.bbox-mobile-admin .bbox-mobile-route-toggle {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    border: 1px solid #bce3dc;
+    background: #effaf7;
+    color: #006b5d;
+    font-weight: 650;
+  }
+  body.bbox-mobile-admin .bbox-mobile-route-toggle::after { content: attr(aria-label) ' ⌄'; }
+  body.bbox-mobile-admin .bbox-mobile-route-toggle[aria-expanded="true"]::after { content: attr(aria-label) ' ⌃'; }
+  body.bbox-mobile-admin .bbox-mobile-card-table :is(input, select, textarea) { width: 100% !important; }
+  body.bbox-mobile-admin .bbox-mobile-card-table td.editable { min-height: 54px; }
+  body.bbox-mobile-admin .bbox-mobile-card-table td.editable::before { color: #007c6d; }
+  body.bbox-mobile-admin .bbox-mobile-table-scroll {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+  }
+  body.bbox-mobile-admin .bbox-mobile-table-scroll::before {
+    content: '↔ ' attr(data-mobile-scroll-hint);
+    display: block;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+  body.bbox-mobile-admin .bbox-mobile-table-scroll > table {
+    min-width: 600px;
+  }
+  body.bbox-mobile-admin :is(.modal, .bbox-mobile-overlay) {
+    padding: 10px !important;
+    align-items: flex-start !important;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  body.bbox-mobile-admin :is(.modal-content, .bbox-mobile-overlay > .card) {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: calc(100dvh - 20px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    margin: auto 0;
+    padding: 14px !important;
+    border-radius: 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+  body.bbox-mobile-admin :is(.modal-header, .modal-body, .modal-footer) {
+    padding: 10px 0 !important;
+    min-width: 0;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  body.bbox-mobile-admin .modal-header h3 { flex: 1 1 180px; }
+  body.bbox-mobile-admin .modal-close { flex: 0 0 44px; }
+  body.bbox-mobile-admin .modal-footer > button { flex: 1 1 130px; }
+  body.bbox-mobile-admin .srcTargetOption {
+    min-height: 48px;
+    padding: 10px !important;
+    font-size: 16px !important;
+  }
+}

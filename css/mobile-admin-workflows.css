@@ -1,0 +1,95 @@
+.bbox-mobile-savebar, .bbox-mobile-list-back { display: none; }
+.bbox-mobile-disclosure > summary { display: none; }
+#ordersT [data-mobile-order-more] { display: none; }
+body:not(.bbox-mobile-admin) .bbox-mobile-disclosure > .bbox-mobile-disclosure-body { display: block; }
+body:not(.bbox-mobile-admin) .bbox-mobile-designer-tools,
+body:not(.bbox-mobile-admin) .bbox-mobile-designer-tools > .bbox-mobile-disclosure-body { display: contents; }
+@media screen and (max-width: 768px) {
+  body.bbox-mobile-admin { --bg: #f5f7f8; --card: #fff; --text: #253442; --muted: #596777; --border: #dce3e7; color-scheme: light; }
+  body.bbox-mobile-admin :is(input,select,textarea) { background-color: #fff; color: #253442; }
+  body.bbox-mobile-admin table { background-color: #fff; }
+  #loginPage { color-scheme: light; --bg: #f5f7f8; --card: #fff; --text: #253442; --muted: #596777; --border: #dce3e7; color: #253442; }
+  #loginPage :is(input,select,textarea) { background-color: #fff; color: #253442; }
+  body.bbox-mobile-admin #orders { display: flex; flex-direction: column; gap: 12px; }
+  body.bbox-mobile-admin #ordersIntro { display: contents; }
+  body.bbox-mobile-admin #ordersSummaryCard { order: 0; }
+  body.bbox-mobile-admin #ordersCreateCard { order: 1; padding: 0 !important; border: 0; box-shadow: none; background: transparent !important; }
+  body.bbox-mobile-admin #ordersCreateCard h3 { display: none; }
+  body.bbox-mobile-admin #ordersCreateCard > div { padding: 0 !important; border: 0 !important; margin: 0 !important; }
+  body.bbox-mobile-admin #ordersSummaryCard > h3 { font-size: 17px; margin-bottom: 12px; }
+  body.bbox-mobile-admin #ordersSummaryCard .orders-help { display: none; }
+  body.bbox-mobile-admin #ordersListCard { order: 2; padding: 0 !important; border: 0; box-shadow: none; background: transparent !important; }
+  body.bbox-mobile-admin #ordersListCard > h3 { margin: 6px 2px 12px; }
+  body.bbox-mobile-admin #activeOrderItemsCard { order: 3; scroll-margin-top: 88px; }
+  body.bbox-mobile-admin #ordersListCard { scroll-margin-top: 88px; }
+  body.bbox-mobile-admin .bbox-mobile-list-back { display: inline-flex; align-items: center; min-height: 44px; padding: 9px 12px; margin: 4px 0 12px; background: #edf5f4; border: 1px solid #c6ded9; color: #00675b; border-radius: 8px; font: 600 14px/1.4 var(--sans); }
+  body.bbox-mobile-admin #ordersListCard .bbox-mobile-card-table tbody tr { border-left: 3px solid #96b3bd; }
+  body.bbox-mobile-admin #ordersListCard .bbox-mobile-card-table tbody tr:has(.pill.ok) { border-left-color: #188267; }
+  body.bbox-mobile-admin #ordersListCard .bbox-mobile-card-table tbody tr:has(.pill.warn) { border-left-color: #b57b15; }
+  body.bbox-mobile-admin #ordersListCard [data-a="open"] { background: #006d62; border-color: #006d62; color: #fff !important; }
+  body.bbox-mobile-admin #ordersT [data-mobile-order-more] { display: inline-flex; }
+  body.bbox-mobile-admin #ordersT > tr:not(.bbox-mobile-order-expanded) > td:is(:nth-child(5),:nth-child(6),:nth-child(8)) { display: none !important; }
+  body.bbox-mobile-admin #ordersT > tr:not(.bbox-mobile-order-expanded) > td:last-child > button:not([data-a="open"]):not([data-mobile-order-more]) { display: none !important; }
+  body.bbox-mobile-admin #ordersT > tr > td:first-child::before { display: none; }
+  body.bbox-mobile-admin #ordersT > tr > td:first-child { padding-bottom: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  body.bbox-mobile-admin #ordersT > tr > td:first-child { grid-column: 1/-1; flex-direction: row; justify-content: flex-start; border-bottom: 0; min-height: 32px; }
+  body.bbox-mobile-admin #ordersListCard .bbox-mobile-card-table tbody > tr { background: #fff; }
+  body.bbox-mobile-admin #ordersT > tr > td:first-child .pill { width: auto; }
+  body.bbox-mobile-admin #ordersT > tr > td:last-child > button:is([data-a="open"],[data-mobile-order-more]) { flex: 1; }
+  body.bbox-mobile-admin .bbox-mobile-original-heading { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; color: #172e42; font-size: 16px; font-weight: 650; cursor: pointer; list-style: none; }
+  body.bbox-mobile-admin .bbox-mobile-disclosure > summary::after { content: '+'; font-size: 24px; font-weight: 400; color: #006d62; }
+  body.bbox-mobile-admin .bbox-mobile-disclosure[open] > summary::after { content: '−'; }
+  body.bbox-mobile-admin .bbox-mobile-disclosure > summary::-webkit-details-marker { display: none; }
+  body.bbox-mobile-admin .bbox-mobile-disclosure-body { padding-top: 12px; }
+  body.bbox-mobile-admin .bbox-mobile-disclosure > summary:focus-visible { outline: 3px solid #007d72; outline-offset: 3px; }
+  body.bbox-mobile-admin #stats { display: flex; flex-direction: column; }
+  body.bbox-mobile-admin #stats > .bbox-mobile-secondary { order: 10; }
+  body.bbox-mobile-admin #settings h3[role="button"] { min-height: 48px; padding: 8px 0; }
+  body.bbox-mobile-admin #my #myList .task :is(input,select,textarea) { font-size: 16px !important; line-height: 1.4 !important; min-height: 48px !important; }
+  body.bbox-mobile-admin #my #myList .task .bbox-mobile-small-text { font-size: 14px !important; line-height: 1.4 !important; }
+  body.bbox-mobile-admin #designer > div:first-child { padding: 12px !important; gap: 8px !important; }
+  body.bbox-mobile-admin #designerOrderSelectMain { width: 100%; min-width: 0 !important; }
+  body.bbox-mobile-admin .bbox-mobile-designer-tools { width: 100%; }
+  body.bbox-mobile-admin .bbox-mobile-designer-tools > div { display: flex; gap: 8px; flex-wrap: wrap; }
+  body.bbox-mobile-admin .bbox-mobile-designer-workspace { display: flex !important; flex-direction: column; height: auto !important; overflow: visible !important; }
+  body.bbox-mobile-admin .bbox-mobile-designer-controls { width: 100% !important; padding: 8px 12px !important; max-height: none; overflow: visible !important; border-right: 0 !important; }
+  body.bbox-mobile-admin .bbox-mobile-designer-controls summary { min-height: 44px; font-size: 15px !important; }
+  body.bbox-mobile-admin .bbox-mobile-designer-canvas { flex: none !important; width: 100%; height: max(380px,55dvh); min-height: 380px; }
+  body.bbox-mobile-admin #designerCanvasWrapper { height: 100% !important; }
+  body.bbox-mobile-admin #designerMinimap { width: 90px !important; height: 60px !important; }
+  body.bbox-mobile-admin #techcards { font-size: 16px; }
+  body.bbox-mobile-admin #techcards .tc-shell { padding: 16px 4px 135px; }
+  body.bbox-mobile-admin #techcards .tc-heading h1 { font-size: 22px; }
+  body.bbox-mobile-admin #techcards .tc-heading p { font-size: 14px; }
+  body.bbox-mobile-admin #techcards .tc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  body.bbox-mobile-admin #techcards .tc-actions [data-action="new"] { grid-column: 1/-1; order: -1; }
+  body.bbox-mobile-admin #techcards .tc-button, body.bbox-mobile-admin #techcards .tc-icon-button, body.bbox-mobile-admin #techcards .tc-text-button, body.bbox-mobile-admin #techcards .tc-component-pill { min-height: 44px; min-width: 44px; font-size: 14px; white-space: normal; }
+  body.bbox-mobile-admin #techcards .tc-tabs { padding: 0 8px; gap: 4px; justify-content: space-between; }
+  body.bbox-mobile-admin #techcards .tc-tab { flex: 1; justify-content: center; min-height: 56px; padding: 12px 2px; font-size: 14px; white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+  body.bbox-mobile-admin #techcards .tc-tab > span { display: none; }
+  body.bbox-mobile-admin #techcards .tc-library { display: flex; flex-wrap: wrap; gap: 8px; }
+  body.bbox-mobile-admin #techcards .tc-library > select { width: 100%; height: auto; min-height: 48px; font-size: 16px; }
+  body.bbox-mobile-admin #techcards [data-save-status] { width: 100%; margin: 0; font-size: 13px; }
+  body.bbox-mobile-admin #techcards .tc-section, body.bbox-mobile-admin #techcards .tc-operation-body { padding: 18px 14px; }
+  body.bbox-mobile-admin #techcards .tc-field > span, body.bbox-mobile-admin #techcards .tc-fieldset legend { font-size: 14px; }
+  body.bbox-mobile-admin #techcards .tc-field small, body.bbox-mobile-admin #techcards .tc-note, body.bbox-mobile-admin #techcards .tc-summary-footnote { font-size: 13px; color: #52685e; }
+  body.bbox-mobile-admin #techcards .tc-field input, body.bbox-mobile-admin #techcards .tc-field select, body.bbox-mobile-admin #techcards .tc-field textarea { min-height: 48px; font-size: 16px; }
+  body.bbox-mobile-admin #techcards .tc-grid-3, body.bbox-mobile-admin #techcards .tc-grid-4, body.bbox-mobile-admin #techcards .tc-form-grid { grid-template-columns: minmax(0,1fr); }
+  body.bbox-mobile-admin #techcards .tc-material { padding: 14px 10px; }
+  body.bbox-mobile-admin #techcards .tc-material-result { grid-template-columns: 1fr 1fr; }
+  body.bbox-mobile-admin #techcards .tc-material-result span { font-size: 13px; }
+  body.bbox-mobile-admin #techcards .tc-operation summary strong { font-size: 16px; }
+  body.bbox-mobile-admin #techcards .tc-operation summary small { font-size: 13px; color: #566d60; }
+  body.bbox-mobile-admin #techcards .tc-component-switch { padding: 14px; }
+  body.bbox-mobile-admin #techcards .tc-component-switch > span { font-size: 13px; }
+  body.bbox-mobile-admin #techcards .tc-summary-actions > :is([data-action="save"],[data-action="preview"]) { display: none; }
+  body.bbox-mobile-admin #techcards .tc-review-box { font-size: 14px; }
+  body.bbox-mobile-admin .bbox-mobile-savebar:not([hidden]) { display: block; position: fixed; left: 0; right: 0; bottom: calc(var(--bbox-mobile-nav-height,72px) + env(safe-area-inset-bottom)); z-index: 40; padding: 8px 12px 10px; background: #fff; border-top: 1px solid #cbded7; box-shadow: 0 -3px 12px #193d3010; }
+  body.bbox-mobile-admin .bbox-mobile-savebar > span { display: block; color: #52665e; font-size: 12px; line-height: 1.4; margin-bottom: 6px; }
+  body.bbox-mobile-admin .bbox-mobile-savebar > div { display: grid; grid-template-columns: 1fr 1.25fr; gap: 8px; }
+  body.bbox-mobile-admin .bbox-mobile-savebar button { min-height: 46px; border: 1px solid #c6dcd5; border-radius: 8px; background: #fff; color: #116453; padding: 10px; font: 650 15px/1.3 var(--sans); }
+  body.bbox-mobile-admin .bbox-mobile-savebar [data-mobile-save] { background: #006d62; border-color: #006d62; color: #fff; }
+  body.bbox-mobile-admin .bbox-mobile-savebar button:disabled { opacity: .6; }
+  body.bbox-mobile-admin .bbox-mobile-savebar button:focus-visible { outline: 3px solid #007d72; outline-offset: 2px; }
+}
