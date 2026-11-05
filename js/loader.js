@@ -10,7 +10,7 @@ const ModuleLoader = {
   mounted: new Set(),
   
   // Версия для cache-busting (обновлять при изменениях)
-  version: '20261105-pages1',
+  version: '20261105-pages2',
   
   // Маппинг разделов на модули
   moduleMap: {

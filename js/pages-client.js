@@ -9,18 +9,24 @@
   const STORAGE = 'bbox-pages:v1:/bbox-access:';
   const nativeFetch = window.fetch.bind(window);
   const pending = new Set(), assets = new Map();
-  let config = null, configFlight = null, keyFlight = null, epoch = 0, token = '', expiresAt = 0;
+  let config = null, configFlight = null, keyFlight = null, epoch = 0, token = '', expiresAt = 0, closing = false;
   const abortError = () => new DOMException('Сеанс изменился или запрос отменён.', 'AbortError');
   const configError = () => Object.assign(new Error('Не удалось проверить адрес сервера B’BOX. Повторите загрузку страницы.'), { code: 'PAGES_CONFIG_INVALID' });
   const storageRead = (storage, key) => { try { return storage.getItem(STORAGE + key); } catch (_) { return null; } };
   const storageWrite = (storage, key, value) => { try { value === null ? storage.removeItem(STORAGE + key) : storage.setItem(STORAGE + key, value); } catch (_) {} };
   function resetAuth() {
-    epoch++; token = ''; expiresAt = 0;
+    epoch++; token = ''; expiresAt = 0; closing = false;
     storageWrite(sessionStorage, 'auth', null);
     for (const controller of pending) controller.abort(abortError());
     pending.clear();
     for (const entry of assets.values()) if (entry.url) URL.revokeObjectURL(entry.url);
     assets.clear();
+  }
+  function beginLogout() {
+    if (!enabled || closing) return;
+    closing = true; epoch++;
+    for (const controller of pending) controller.abort(abortError());
+    pending.clear();
   }
   if (enabled) {
     try {
@@ -95,6 +101,7 @@
   }
   async function request(path, options = {}) {
     if (!enabled) return nativeFetch(path, options);
+    if (closing && path !== '/api/auth/logout') throw abortError();
     if (token && expiresAt <= Date.now()) resetAuth();
     const generation = epoch, owner = window.currentUser, requestToken = token;
     const controller = new AbortController(), external = options.signal;
@@ -207,5 +214,5 @@
   }
   const ready = enabled ? loadConfig() : Promise.resolve(null);
   ready.catch(() => {}); // Callers receive the actual error; startup must not emit an unhandled rejection.
-  window.PagesClient = Object.freeze({ enabled, ready, request, acceptAuth, logout: resetAuth, privateUrl, cachedPrivateUrl, download });
+  window.PagesClient = Object.freeze({ enabled, ready, request, acceptAuth, beginLogout, logout: resetAuth, privateUrl, cachedPrivateUrl, download });
 })();

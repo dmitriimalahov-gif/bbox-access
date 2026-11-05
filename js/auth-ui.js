@@ -155,6 +155,7 @@ async function performLogin(role, username, password){
 
 async function doLogout(){
   if (loginFlight) await loginFlight;
+  window.PagesClient?.beginLogout();
   window.CatalogState?.reset();
   window.ColumnsModule?.reset();
   window.AccessSettings?.reset();
