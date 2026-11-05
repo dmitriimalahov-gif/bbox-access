@@ -19,8 +19,13 @@
   --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark){
+/* Desktop defaults to light even when the operating system uses dark mode. */
+@media (min-width: 769px){
+  :root{color-scheme:light}
+}
+
+/* Keep the existing compact-screen theme behavior. */
+@media (max-width: 768px) and (prefers-color-scheme: dark){
   :root{
     --bg:#0b0c0f;
     --text:#f2f2f2;
